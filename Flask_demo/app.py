@@ -8,6 +8,10 @@ def index():
     return render_template('home.html')
     #return 'Home Page'
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 # http://127.0.0.1:5000/movieName/God Father
 @app.route('/movieName/<movieName>')
 def movieName(movieName): # variable name main the same as < >
@@ -20,6 +24,7 @@ def movieId(movieId):
 @app.route('/profile/<movieName>') 
 def profile(movieName):
     return render_template('profile.html', name=movieName)
+
 
 if __name__ == '__main__':
     #app.run()

@@ -1,10 +1,21 @@
 <!DOCTYPE html>
+<!-layout will be used for all page start with {% extends 'layout.html' %}->
+
 <html lang="en">
+    <!-My demo is what shows in tab->
     <head>
         <meta charset="UTF-8">
         <title>My demo</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     </head>
+
     <body>
-        {% block body %} {% endblock %}
+    {% include 'includes/_navbar.html' %}
+    <!-"container" make the content between div align with navbar->
+    <div class="container">
+    {% block body %} {% endblock %}
+    </div>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </body>
 </html>

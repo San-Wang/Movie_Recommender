@@ -73,11 +73,11 @@ def recommendation_base_overview(movie,n):
     # sort base on value, also keep index
     sort = sorted(enumerate(cosine_sim[idx]),reverse=True,key = lambda x: x[1])
     idx_top = [i[0] for i in sort[1:n+1]]
-    rate = [i[1] for i in sort[1:n+1]]
+    similary = [i[1] for i in sort[1:n+1]]
     rank = df_s.iloc[idx_top][['index','title']]
-    rank['rate'] = rate
+    rank['similary'] = similary
     # return index, movie title and cosine_sim rate
-    return rank
+    return rank.reset_index(drop=True)
 
 recommendation_base_overview('The Godfather',3)
 
@@ -123,10 +123,10 @@ def recommendation_base_crew(movie,n):
     # sort base on value, also keep index
     sort = sorted(enumerate(cosine_sim_crew[idx]),reverse=True,key = lambda x: x[1])
     idx_top = [i[0] for i in sort[1:n+1]]
-    rate = [i[1] for i in sort[1:n+1]]
+    similary = [i[1] for i in sort[1:n+1]]
     rank = df_s.iloc[idx_top][['index','title']]
-    rank['rate'] = rate
-    return rank
+    rank['similary'] = similary
+    return rank.reset_index(drop=True)
 
 ############### Collaborative Filtering(user-user)  #################
 '''

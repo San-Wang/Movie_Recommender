@@ -1,0 +1,9 @@
+flask
+os
+pandas
+numpy
+ast
+sklearn
+nltk
+
+

@@ -1,4 +1,6 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, jsonify
+import Movie_Recommender
+
 
 app = Flask(__name__)
 
@@ -12,14 +14,13 @@ def index():
 def about():
     return render_template('about.html')
 
-# http://127.0.0.1:5000/movieName/God Father
-@app.route('/movieName/<movieName>')
-def movieName(movieName): # variable name main the same as < >
-    return 'Movie Name %s' % movieName
+# http://127.0.0.1:5000/recommender/The Godfather
+@app.route('/recommender/<movieName>')
+def recommender(movieName): # variable name need to be the same as < >
+    result_overview = Movie_Recommender.recommendation_base_overview(str(movieName), 3)
+    result_cast = Movie_Recommender.recommendation_base_crew(str(movieName), 3)
+    return render_template('recommender.html', movie = movieName, result = [result_overview,result_cast])
 
-@app.route('/movieId/<int:movieId>')
-def movieId(movieId):
-    return '<h1>Movie ID %s<h1>' % movieId
 
 @app.route('/profile/<movieName>') 
 def profile(movieName):

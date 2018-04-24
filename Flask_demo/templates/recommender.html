@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h1>{{ movie }}</h1>
+    <h2> Top 3 recommended base on movie description: </h2>
+    {{ result[0].to_html(classes="table table-striped") | safe }}
+    <h2> base on movie cast: </h2>
+    {{ result[1].to_html(classes="table table-striped") | safe }}
+
+{% endblock %}

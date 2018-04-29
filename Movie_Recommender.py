@@ -7,11 +7,7 @@ from scipy import stats
 import ast
 import sklearn
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
-#from sklearn.metrics.pairwise import linear_kernel, cosine_similarity
 import nltk
-#from nltk.stem.snowball import SnowballStemmer
-from nltk.stem.wordnet import WordNetLemmatizer
-from nltk.corpus import wordnet
 import surprise
 
 # Data Source: https://www.kaggle.com/rounakbanik/the-movies-dataset/data
@@ -35,7 +31,7 @@ def filter_keywords(x):
             words.append(i)
     return words
 
-DATA_DIR = '/Users/San/SelfLearning/RecommendationSystem/movies-master'
+DATA_DIR = '../data'
 raw = pd.read_csv(os.path.join(DATA_DIR, 'movies_metadata.csv'))
 raw['year'] = pd.to_datetime(raw['release_date'], errors='coerce').apply(lambda x: str(x).split('-')[0] if x != np.nan else np.nan)
 #raw.head(n=2)

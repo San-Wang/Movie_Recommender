@@ -1,7 +1,7 @@
 ## Movie Recommender Project  
 A  recommendation system using content-based & collaborative filtering methods.  
 
-[Data Source:](https://www.kaggle.com/rounakbanik/the-movies-dataset/data)
+[Data Source](https://www.kaggle.com/rounakbanik/the-movies-dataset/data)
 
 methods: 
 * content-based: NLTK, scikit-learn

@@ -17,7 +17,7 @@ Home page:
 About page:  
 ![about](output/about.png)  
 Recommendation example:  
-![example](output/output.png)
+![example](output/example.png)
 
 
 TODO list:   

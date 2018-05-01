@@ -10,7 +10,7 @@ methods:
 demo: flask(finished), mySQL(final demo), Spark(final demo)
 
 Current demo:  
-<a href="https://imgflip.com/gif/29c5az"><img src="https://i.imgflip.com/29c5az.gif" title="made at imgflip.com"/></a>  
+<a href="https://imgflip.com/gif/29fzmi"><img src="https://i.imgflip.com/29fzmi.gif" title="movie recommender demo"/></a>  
   
 Home page:  
 ![home page](output/HomePage.png)  

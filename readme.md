@@ -1,7 +1,7 @@
 ## Movie Recommender Project  
 A  recommendation system using content-based & collaborative filtering methods.  
 
-[Data Source:](https://www.kaggle.com/rounakbanik/the-movies-dataset/data)
+[Data Source](https://www.kaggle.com/rounakbanik/the-movies-dataset/data)
 
 methods: 
 * content-based: NLTK, scikit-learn
@@ -10,14 +10,14 @@ methods:
 demo: flask(finished), mySQL(final demo), Spark(final demo)
 
 Current demo:  
-<a href="https://imgflip.com/gif/29c5az"><img src="https://i.imgflip.com/29c5az.gif" title="made at imgflip.com"/></a>  
+<a href="https://imgflip.com/gif/29fzmi"><img src="https://i.imgflip.com/29fzmi.gif" title="movie recommender demo"/></a>  
   
 Home page:  
 ![home page](output/HomePage.png)  
 About page:  
 ![about](output/about.png)  
 Recommendation example:  
-![example](output/about.png)
+![example](output/example.png)
 
 
 TODO list:   

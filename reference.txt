@@ -11,8 +11,12 @@ https://www.youtube.com/watch?v=WxgYYGxoPwY&index=5&list=PL6gx4Cwl9DGDi9F_slcQK7
 • navbar:
 https://www.youtube.com/watch?v=zRwy8gtgJ1A&index=1&list=PLillGF-RfqbbbPz6GSEM9hLQObuQjNoj_
 
-• connect mySQL database to Flask(working on now)
+• connect mySQL database to Flask(finished)
 https://pythonprogramming.net/flask-connect-mysql-using-mysqldb-tutorial/?completed=/mysql-database-with-flask-tutorial/
 
-• Request form from user (ongoing)
+• Request form from user (finished)
 https://www.youtube.com/watch?v=SeA5pVJoH4c
+√https://github.com/udacity/Full-Stack-Foundations/tree/master/Lesson-4/Final-Project
+
+To Do
+[ ] display mySQL query result in web

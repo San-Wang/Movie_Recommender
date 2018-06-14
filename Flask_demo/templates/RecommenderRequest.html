@@ -2,25 +2,25 @@
 
 {% block body %}
     <div class="jumbotron text-center">
-    <h1>Explore Movies</h1>
+    <h1>Recommender Request</h1>
     </div>
     <h3> Guide </h3>
     <p>
-        <b>Genre options:</b><br>
-            Romance; Comedy <br>
+        <b>Movie Name:</b><br>
+            text <br>
         <b>Top N: </b><br>
-            Any integer, how many movies you want to list
+            Any integer, how many recommend movies you want
     <br>
     <br>
 
     </p>
 
     <div class = 'pane'>
-    <form action="{{ url_for('GenreTopN')}}" method = 'post'>
+    <form action="{{ url_for('recommender')}}" method = 'post'>
 
         <dl>
-            <dt>Genre:</dt>
-                <dd><input type ='text' size='30' name='Genre' required></dd>
+            <dt>Movie Name:</dt>
+                <dd><input type ='text' size='30' name='Movie Name' required></dd>
             <dt>Top N:</dt>
                 <dd><input type="text" size="8" name = 'Top N' required></dd>
             <dt>Status:</dt>

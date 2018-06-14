@@ -15,22 +15,28 @@ def about():
     return render_template('about.html')
 
 @app.route('/profile/<movieName>')
-def profile(movieName):
+def profile(movieName): # variable name need to be the same as < >
     return render_template('profile.html', name=movieName)
 
-# http://127.0.0.1:5000/recommender/The Godfather
-@app.route('/recommender/<movieName>')
-def recommender(movieName): # variable name need to be the same as < >
-    result_overview = Movie_Recommender.recommendation_base_overview(str(movieName), 3)
-    result_cast = Movie_Recommender.recommendation_base_crew(str(movieName), 3)
-    return render_template('recommender.html', movie = movieName, result = [result_overview,result_cast])
+# http://127.0.0.1:5000/recommender/the Godfather
+# @app.route('/recommender/<MovieName>')
+@app.route('/recommender', methods=['GET','POST'])
+def recommender():
+    if request.method == 'POST':
+        MovieName = request.form['Movie Name']
+        top = int(request.form['Top N'])
+        result_overview = Movie_Recommender.recommendation_base_overview(str(MovieName), top)
+        result_cast = Movie_Recommender.recommendation_base_crew(str(MovieName), top)
+        return render_template('RecommenderResult.html', MovieName = MovieName, top=top, result = [result_overview, result_cast])
+    else:
+        return render_template('RecommenderRequest.html')
 
 @app.route('/EDA', methods=['GET','POST'])
 def GenreTopN():
     if request.method == 'POST': # when the form is submitted
         genre = request.form['Genre']
         top = request.form['Top N']
-        return render_template('EDAresult.html',genre=genre,top=top)
+        return render_template('EDAResult.html', genre=genre, top=top)
     else:
         return render_template('EDARequest_genre.html')
 

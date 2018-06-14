@@ -1,8 +1,12 @@
 {% extends 'layout.html' %}
 
 {% block body %}
-    <h1>{{ movie }}</h1>
-    <h2> Top 3 recommended base on movie description: </h2>
+    <div class="jumbotron text-center">
+    <h1>Recommender Result</h1>
+    </div>
+
+    <h1>Recommendation base on movie: {{ MovieName }}</h1>
+    <h2> Top {{ top }} recommended base on movie description: </h2>
     {{ result[0].to_html(classes="table table-striped") | safe }}
     <h2> base on movie cast: </h2>
     {{ result[1].to_html(classes="table table-striped") | safe }}

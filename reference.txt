@@ -1,0 +1,18 @@
+templates folder: save html files
+static: CSS file for style
+
+reference:
+• project inspired by:
+https://www.codementor.io/jadianes/building-a-web-service-with-apache-spark-flask-example-app-part2-du1083854
+
+• understanding flask basic:
+https://www.youtube.com/watch?v=WxgYYGxoPwY&index=5&list=PL6gx4Cwl9DGDi9F_slcQK7knjtO8TUvUs
+
+• navbar:
+https://www.youtube.com/watch?v=zRwy8gtgJ1A&index=1&list=PLillGF-RfqbbbPz6GSEM9hLQObuQjNoj_
+
+• connect mySQL database to Flask(working on now)
+https://pythonprogramming.net/flask-connect-mysql-using-mysqldb-tutorial/?completed=/mysql-database-with-flask-tutorial/
+
+• Request form from user (ongoing)
+https://www.youtube.com/watch?v=SeA5pVJoH4c

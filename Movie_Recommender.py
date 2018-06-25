@@ -31,6 +31,18 @@ def filter_keywords(x):
             words.append(i)
     return words
 
+# display function credit: Mohtadi Ben Fraj
+def display_posters(df):
+    poster_html = ''
+    for ref in df.poster_path:
+            if ref != '':
+                link = 'http://image.tmdb.org/t/p/w185/' + ref
+                poster_html += "<img style='width: 120px; margin: 0px; \
+                  float: left; border: 1px solid black;' src='%s' />" \
+              % link
+
+    return poster_html
+
 DATA_DIR = '../data'
 raw = pd.read_csv(os.path.join(DATA_DIR, 'movies_metadata.csv'))
 raw['year'] = pd.to_datetime(raw['release_date'], errors='coerce').apply(lambda x: str(x).split('-')[0] if x != np.nan else np.nan)
@@ -61,7 +73,7 @@ cosine_sim = sklearn.metrics.pairwise.linear_kernel(tfidf_matrix, tfidf_matrix)
 # now we have pairwise cosine similarity matrix
 #cosine_sim.shape
 
-###### based on movie overview, recommend top n similar #######
+###### based on movie overview, recommend top n similar #########
 def recommendation_base_overview(movie,n):
     # get movie's index value, !!!not id
     idx = df_s[df_s.title == movie].index[0] # attention: the idx is Int64Index (basically a list)
@@ -69,21 +81,21 @@ def recommendation_base_overview(movie,n):
     # sort base on value, also keep index
     sort = sorted(enumerate(cosine_sim[idx]),reverse=True,key = lambda x: x[1])
     idx_top = [i[0] for i in sort[1:n+1]]
-    similary = [i[1] for i in sort[1:n+1]]
-    rank = df_s.iloc[idx_top][['index','title']]
-    rank['similary'] = similary
+    similarity = [i[1] for i in sort[1:n+1]]
+    rank = df_s.iloc[idx_top][['index','title','poster_path']]
+    rank['similarity'] = similarity
     # return index, movie title and cosine_sim rate
     return rank.reset_index(drop=True)
 
-recommendation_base_overview('The Godfather',3)
+#recommendation_base_overview('The Godfather',3)
 
-###### based on crew and cast
+###### based on crew and cast ##########
 credits = pd.read_csv(os.path.join(DATA_DIR, 'credits.csv'))
 keywords = pd.read_csv(os.path.join(DATA_DIR, 'keywords.csv'))
 credits.id = credits.id.astype('int')
 keywords.id = keywords.id.astype('int')
-df = raw_drop.merge(credits, on='id')
-df = df.merge(keywords, on='id')
+df = raw_drop.merge(credits, how='left',on='id')
+df = df.merge(keywords, how='left', on='id')
 df_s = df[df.id.isin(links_small)]
 df_s = df_s.reset_index(drop=True)
 df_s = df_s.reset_index(drop=False)
@@ -99,8 +111,8 @@ df_s.cast_top3 = df_s.cast_top3.apply(lambda x: [str.lower(i.replace(' ','')) fo
 df_s.director = df_s.director.astype('str').apply(lambda x: str.lower(x.replace(" ", "")))
 df_s['director_weighted'] = df_s.director.apply(lambda x: [x,x])
 s = df_s.apply(lambda x: pd.Series(x['keywords_edit']),axis=1).stack().reset_index(level=1, drop=True)
-s = s.value_counts()
-keyword_list = s[s>1]
+s = s.value_counts() #keywords_count
+keyword_list = s[s>1] #keywords_list
 
 stem = nltk.stem.snowball.SnowballStemmer('english')
 df_s['keyword_final'] = df_s.keywords_edit.apply(filter_keywords).apply(lambda x: [stem.stem(i) for i in x]).apply(lambda x: [str.lower(i.replace(" ", "")) for i in x])
@@ -119,9 +131,9 @@ def recommendation_base_crew(movie,n):
     # sort base on value, also keep index
     sort = sorted(enumerate(cosine_sim_crew[idx]),reverse=True,key = lambda x: x[1])
     idx_top = [i[0] for i in sort[1:n+1]]
-    similary = [i[1] for i in sort[1:n+1]]
+    similarity = [i[1] for i in sort[1:n+1]]
     rank = df_s.iloc[idx_top][['index','title']]
-    rank['similary'] = similary
+    rank['similarity'] = similarity
     return rank.reset_index(drop=True)
 
 ############### Collaborative Filtering(user-user)  #################

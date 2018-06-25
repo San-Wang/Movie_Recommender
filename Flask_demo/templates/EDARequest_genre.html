@@ -7,9 +7,13 @@
     <h3> Guide </h3>
     <p>
         <b>Genre options:</b><br>
-            Romance; Comedy <br>
+            Action, Animation, Adventure, Comedy, Crime, Drama,
+            Fantasy, Family, Horror, History, Romance, Science Fiction,
+            Thriller  <br>
         <b>Top N: </b><br>
-            Any integer, how many movies you want to list
+            Any integer, how many movies you want to list <br>
+        <b>Min Rate Count:</b><br>
+            Will only list movies that have the minimum number of rating<br>
     <br>
     <br>
 
@@ -23,6 +27,8 @@
                 <dd><input type ='text' size='30' name='Genre' required></dd>
             <dt>Top N:</dt>
                 <dd><input type="text" size="8" name = 'Top N' required></dd>
+            <dt>Min Rate Count:</dt>
+                <dd><input type="text" size="8" value="100" name = 'Min Rate Count'></dd>
             <dt>Status:</dt>
                 <dd><input type ='radio' name='Status' value='Released' checked>Released</dd>
                 <dd><input type ='radio' name='Status' value='Not Released'>Not Released</dd>

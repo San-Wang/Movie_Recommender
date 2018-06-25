@@ -5,10 +5,13 @@
     <h1>Explore Result</h1>
     </div>
 
-    {% print('using python print: {} {}'.format(genre, top)) %}
+    <h2> Top {{ top }} rate movies for {{ genre }} genre: </h2>
     <br>
     <p>
     Genre: {{ genre}}<br>
-    Top: {{ top }}
+    Top: {{ top }}<br>
+    For movies have more than {{ min_count }} rating
     </p>
+    {{ result.to_html(classes="table table-striped") | safe }}
+
 {% endblock %}

@@ -1,6 +1,10 @@
 ## Movie Recommender Project  
 A  recommendation system using content-based & collaborative filtering methods.  
 
+Current demo:  
+<a href="https://imgflip.com/gif/2cuv3v"><img src="https://i.imgflip.com/2cuv3v.gif" width="500px" height="300px" title="movie recommender demo"/></a>  
+
+
 [Data Source](https://www.kaggle.com/rounakbanik/the-movies-dataset/data)
 
 ## Overview  
@@ -20,8 +24,6 @@ Here is a workflow overview about my demo:
 
 demo: flask(finished), mySQL(finished), Spark(final demo)
 
-Current demo:  
-<a href="https://imgflip.com/gif/2cuv3v"><img src="https://i.imgflip.com/2cuv3v.gif" width="500px" height="300px" title="movie recommender demo"/></a>  
 
 Home page:  
 ![home page](/output/HomePage.png)  

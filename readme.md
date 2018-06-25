@@ -10,7 +10,7 @@ Current demo:
 ## Overview  
 A  recommendation system using content-based & collaborative filtering methods.   
 Here is a workflow overview about my demo:  
-![workflow](/images/Recommender/workflow.png)  
+![workflow](/output/workflow.png)  
 
 **What it can do:**  
 * recommend movies based on movie's **plot** or **cast**(director & main actors and actresses)  

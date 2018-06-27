@@ -26,16 +26,20 @@ demo: flask(finished), mySQL(finished), Spark(final demo)
 
 
 Home page:  
-![home page](/output/HomePage.png)  
+![home page](/output/HomePage.png)   
+
 About page:  
 ![about](/output/about.png)  
+
 Recommendation example:  
+
 Request Page:  
 ![Request Page](/output/RecommendRequest.png)  
 Recommendation Result Page:  
 ![RecommendResult1](/output/RecommendResult1.png)  
 ![RecommendResult2](/output/RecommendResult2.png)  
-Best movie genres:  
+
+Best movie by genres:  
 ![ExploreRequest](/output/ExploreRequest.png)   
 ![ExploreResult](/output/ExploreResult.png)   
 

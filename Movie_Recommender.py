@@ -9,6 +9,7 @@ import sklearn
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 import nltk
 import surprise
+import MySQLdb
 
 # Data Source: https://www.kaggle.com/rounakbanik/the-movies-dataset/data
 # Reference: https://www.datacamp.com/community/tutorials/recommender-systems-python
@@ -42,6 +43,35 @@ def display_posters(df):
               % link
 
     return poster_html
+
+# database
+def connection():
+    conn = MySQLdb.connect(
+        host='localhost', #127.0.0.1
+        user='root',
+        passwd='930423',
+        db='movies'
+    )
+
+    return conn
+
+def top_by_genre(genre,min_count,top):
+    '''
+    :param:
+    genre option: Action,Animation,Adventure,Comedy,Crime,Drama,Fantasy,Family,Horror,History,Romance,Science Fiction,Thriller,
+    :return:
+    '''
+    sql = '''
+    select id, title,vote_average,vote_count from moviemeta
+    where genres like '%{}%' and vote_count > {}
+    order by vote_average desc
+    limit {};
+    '''.format(genre, int(min_count), int(top))
+
+    cursor = connection().cursor()
+    cursor.execute(sql)
+    result = pd.DataFrame(list(cursor.fetchall()), columns=['id', 'title', 'rate_average', 'rate_count'])
+    return result
 
 DATA_DIR = '../data'
 raw = pd.read_csv(os.path.join(DATA_DIR, 'movies_metadata.csv'))

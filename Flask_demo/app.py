@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, jsonify
 import Movie_Recommender
-import EDA
 
 
 app = Flask(__name__)
@@ -39,7 +38,7 @@ def GenreTopN():
         genre = request.form['Genre']
         top = request.form['Top N']
         min_count = request.form['Min Rate Count']
-        result = EDA.top_by_genre(genre,min_count,top)
+        result = Movie_Recommender.top_by_genre(genre,min_count,top)
         return render_template('EDAResult.html', genre=genre, top=top,min_count=min_count,result=result)
     else:
         return render_template('EDARequest_genre.html')

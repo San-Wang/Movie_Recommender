@@ -56,20 +56,21 @@ TODO list:
 * [ ] recommend movie based on poster style? research feasibility?
 
 File Structure:  
+```
 Movie_Recommendation:  
-|-- data  
-|-- explore: playing script   
-|-- Flask_demo  
+|-- data/  
+|-- explore/                            # playing script   
+|-- Flask_demo/  
 |	|-- app.py  
 |	|-- requirments.txt  
-|	|-- static:   
-|	|-- templates:   
-|-- Movie_Recommender.py: main engine  
-|-- Present: images used for blog  
+|	|-- static/                         # CSS file for style
+|	|-- templates/                      # html templates
+|-- Movie_Recommender.py                # main engine  
+|-- Present/                            # images used for blog  
 |-- readme.md  
 |-- reference.txt  
-|-- SQL: mySQL related  
-
+|-- SQL/                                # mySQL related  
+```
 
 
 

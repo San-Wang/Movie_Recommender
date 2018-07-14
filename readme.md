@@ -49,9 +49,11 @@ TODO list:
 * [x] Connect mySQL with flask
 * [x] Add Tableau EDA dashboard
 * [ ] Display movie poster images in recommendation result
+* [ ] Create login as selected user ID function
+* [ ] Create a user profile page (favorite movie by genre, top recommendation)
 * [ ] Save similarity matrix to speed start  
 * [ ] Using pyspark library to do collaborative filtering instead of surprise.SVD
-* [ ] recommend movie based on poster style? Is it feasible?
+* [ ] recommend movie based on poster style? research feasibility?
 
 File Structure:  
 Movie_Recommendation:  

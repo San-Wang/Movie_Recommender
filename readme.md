@@ -8,7 +8,7 @@ Current demo:
 ## Overview  
 A  recommendation system using content-based & collaborative filtering methods.   
 Here is a workflow overview about my demo:  
-![workflow](/output/workflow.png)  
+![workflow](/Present/workflow.png)  
 
 **What it can do:**  
 * recommend movies based on movie's **plot** or **cast**(director & main actors and actresses)  
@@ -24,22 +24,22 @@ demo: flask(finished), mySQL(finished), Spark(final demo)
 
 
 Home page:  
-![home page](/output/HomePage.png)   
+![home page](/Present/HomePage.png)   
 
 About page:  
-![about](/output/about.png)  
+![about](/Present/about.png)  
 
 Recommendation example:  
 
 Request Page:  
-![Request Page](/output/RecommendRequest.png)  
+![Request Page](/Present/RecommendRequest.png)  
 Recommendation Result Page:  
-![RecommendResult1](/output/RecommendResult1.png)  
-![RecommendResult2](/output/RecommendResult2.png)  
+![RecommendResult1](/Present/RecommendResult1.png)  
+![RecommendResult2](/Present/RecommendResult2.png)  
 
 Best movie by genres:  
-![ExploreRequest](/output/ExploreRequest.png)   
-![ExploreResult](/output/ExploreResult.png)   
+![ExploreRequest](/Present/ExploreRequest.png)   
+![ExploreResult](/Present/ExploreResult.png)   
 
 
 

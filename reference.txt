@@ -18,5 +18,3 @@ https://pythonprogramming.net/flask-connect-mysql-using-mysqldb-tutorial/?comple
 https://www.youtube.com/watch?v=SeA5pVJoH4c
 √https://github.com/udacity/Full-Stack-Foundations/tree/master/Lesson-3/Final-Flask-Application
 
-To Do
-[ ] display mySQL query result in web

@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 # @ signifies a decorator
 @app.route('/')
-def index():
+def home():
     return render_template('home.html')
     #return 'Home Page'
 
@@ -20,17 +20,17 @@ def profile(movieName): # variable name need to be the same as < >
 
 # http://127.0.0.1:5000/recommender/the Godfather
 # @app.route('/recommender/<MovieName>')
-@app.route('/recommender', methods=['GET','POST'])
-def recommender():
+@app.route('/recommendation', methods=['GET','POST'])
+def recommendation():
     if request.method == 'POST':
         MovieName = request.form['Movie Name']
         top = int(request.form['Top N'])
         result_overview = Movie_Recommender.recommendation_base_overview(str(MovieName), top)
         poster_html = Movie_Recommender.display_posters(result_overview)
         result_cast = Movie_Recommender.recommendation_base_crew(str(MovieName), top)
-        return render_template('RecommenderResult.html', MovieName = MovieName, top=top, result = [result_overview, result_cast,poster_html])
+        return render_template('recommendationResult.html', MovieName = MovieName, top=top, result = [result_overview, result_cast, poster_html])
     else:
-        return render_template('RecommenderRequest.html')
+        return render_template('recommendationRequest.html')
 
 @app.route('/EDA', methods=['GET','POST'])
 def GenreTopN():

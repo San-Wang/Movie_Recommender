@@ -5,8 +5,6 @@ Current demo:
 <a href="https://imgflip.com/gif/2cuv3v"><img src="https://i.imgflip.com/2cuv3v.gif" width="500px" height="300px" title="movie recommender demo"/></a>  
 
 
-[Data Source](https://www.kaggle.com/rounakbanik/the-movies-dataset/data)
-
 ## Overview  
 A  recommendation system using content-based & collaborative filtering methods.   
 Here is a workflow overview about my demo:  
@@ -49,5 +47,29 @@ Best movie by genres:
 TODO list:   
 * [x] Build local host demo website(flask)  
 * [x] Connect mySQL with flask
-* [ ] Save similarity matrix in mySQL database  
+* [x] Add Tableau EDA dashboard
+* [ ] Display movie poster images in recommendation result
+* [ ] Save similarity matrix to speed start  
 * [ ] Using pyspark library to do collaborative filtering instead of surprise.SVD
+* [ ] recommend movie based on poster style? Is it feasible?
+
+File Structure:  
+Movie_Recommendation:  
+|-- data
+|-- explore: playing script 
+|-- Flask_demo
+|	|-- app.py
+|	|-- requirments.txt
+|	|-- static: 
+|	|-- templates: 
+|-- Movie_Recommender.py: main engine
+|-- Present: images used for blog
+|-- readme.md
+|-- reference.txt
+|-- SQL: mySQL related
+
+
+
+
+
+

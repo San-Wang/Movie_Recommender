@@ -57,18 +57,18 @@ TODO list:
 
 File Structure:  
 Movie_Recommendation:  
-|-- data
-|-- explore: playing script 
-|-- Flask_demo
-|	|-- app.py
-|	|-- requirments.txt
-|	|-- static: 
-|	|-- templates: 
-|-- Movie_Recommender.py: main engine
-|-- Present: images used for blog
-|-- readme.md
-|-- reference.txt
-|-- SQL: mySQL related
+|-- data  
+|-- explore: playing script   
+|-- Flask_demo  
+|	|-- app.py  
+|	|-- requirments.txt  
+|	|-- static:   
+|	|-- templates:   
+|-- Movie_Recommender.py: main engine  
+|-- Present: images used for blog  
+|-- readme.md  
+|-- reference.txt  
+|-- SQL: mySQL related  
 
 
 

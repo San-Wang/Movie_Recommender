@@ -1,6 +1,3 @@
-templates folder: save html files
-static: CSS file for style
-
 reference:
 • project inspired by:
 https://www.codementor.io/jadianes/building-a-web-service-with-apache-spark-flask-example-app-part2-du1083854

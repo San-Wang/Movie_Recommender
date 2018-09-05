@@ -54,6 +54,8 @@ TODO list:
 * [ ] Save similarity matrix to speed start  
 * [ ] Using pyspark library to do collaborative filtering instead of surprise.SVD
 * [ ] recommend movie based on poster style? research feasibility?
+* [ ] use popular growth to diffrentiate classic with recent  
+
 
 File Structure:  
 ```

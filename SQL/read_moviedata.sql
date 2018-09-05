@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS moviemeta;
 CREATE TABLE moviemeta (
-  `adult` ENUM('TRUE','FALSE'),
+  `adult` ENUM('TRUE','FALSE'),  # adult enum('true', 'false')
   `belongs_to_collection` text,
   `budget` bigint(20) DEFAULT NULL,
   `genres` text,

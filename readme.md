@@ -20,7 +20,7 @@ Here is a workflow overview about my demo:
 * content-based: NLTK, scikit-learn, TFIDF
 * collaborative filtering: surprise, pyspark(final demo)
 
-demo: flask(finished), mySQL(finished), Spark(final demo)
+demo: flask(finished), mySQL(finished), postgresql(finished), Spark(final demo)
 
 
 Home page:  
@@ -61,17 +61,24 @@ File Structure:
 ```
 Movie_Recommendation:  
 |-- data/  
+|	|-- TMDB API
+|		|-- credits.csv
+|		|-- keywords.csv
+|		|-- movies_metadata.csv			# 45463 entries
+|	|-- GroupLens
+|		|-- ratings.csv					# 26024289 entries
+|		|-- links.csv
 |-- explore/                            # playing script   
 |-- Flask_demo/  
 |	|-- app.py  
 |	|-- requirments.txt  
 |	|-- static/                         # CSS file for style
-|	|-- templates/                      # html templates
+|	|-- templates/                     	# html templates
 |-- Movie_Recommender.py                # main engine  
 |-- Present/                            # images used for blog  
 |-- readme.md  
 |-- reference.txt  
-|-- SQL/                                # mySQL related  
+|-- SQL/     
 ```
 
 

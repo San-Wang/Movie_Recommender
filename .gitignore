@@ -4,5 +4,7 @@ __pycache__/
 data/
 SQL/
 explore/
+model/
 Log_RecSys.txt
+story.md
 
